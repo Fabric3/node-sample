@@ -1,7 +1,9 @@
 package org.fabric3.samples.node;
 
-import org.fabric3.api.node.*;
-import org.junit.*;
+import org.fabric3.api.node.Bootstrap;
+import org.fabric3.api.node.Domain;
+import org.fabric3.api.node.Fabric;
+import org.junit.Test;
 
 /**
  *
