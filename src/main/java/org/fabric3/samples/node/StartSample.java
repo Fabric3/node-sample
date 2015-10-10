@@ -1,6 +1,8 @@
 package org.fabric3.samples.node;
 
-import org.fabric3.api.node.*;
+import org.fabric3.api.node.Bootstrap;
+import org.fabric3.api.node.Domain;
+import org.fabric3.api.node.Fabric;
 
 /**
  *
@@ -14,11 +16,11 @@ public class StartSample {
         fabric.start();
 
         Domain domain = fabric.getDomain();
-        //        domain.deploy("Foo", new FooServiceImpl());
-        //
-        //        FooService service = domain.getService(FooService.class);
-        //
-        //        System.out.println(service.hello());
+        domain.deploy("Foo", new FooServiceImpl());
+
+        FooService service = domain.getService(FooService.class);
+
+        System.out.println(service.hello());
 
         fabric.stop();
 
