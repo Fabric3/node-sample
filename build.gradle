@@ -1,10 +1,23 @@
 apply plugin: 'java'
+apply plugin: 'application'
 
 repositories {
+    mavenLocal()
     jcenter()
 }
 
 dependencies {
 
+    compile group: fabric3Group, name: 'fabric3-node', version: fabric3Version , transitive: false
+    compile group: fabric3Group, name: 'fabric3-node-extensions', version: fabric3Version, transitive: false
+
+    compile group: fabric3Group, name: 'profile-rs', version: fabric3Version, classifier: 'bin', ext: 'zip'
+    compile group: fabric3Group, name: 'profile-file', version: fabric3Version, classifier: 'bin', ext: 'zip'
+
     testCompile 'junit:junit:4.12'
 }
+
+
+mainClassName = 'org.fabric3.samples.node.StartSample'
+
+//applicationDefaultJvmArgs = ["-agentlib:jdwp=transport=dt_socket,server=y,suspend=y,address=5006"]
